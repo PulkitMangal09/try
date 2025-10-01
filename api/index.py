@@ -37,7 +37,7 @@ async def check_latency(payload: LatencyRequest):
             continue
 
         latencies = [rec["latency_ms"] for rec in region_data]
-        uptimes = [rec["uptime"] for rec in region_data]
+        uptimes = [rec["uptime_pct"] for rec in region_data]
 
         # Metrics
         avg_latency = float(np.mean(latencies))
